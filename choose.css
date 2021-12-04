@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("back.jpg");
+    height: 100vh; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cont{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px 50px 50px 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.cont hr{
+    margin-bottom: 30px;
+    text-align: center;
+    width: 30vw;
+}
+.cont a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    
+}
+.cont a:hover{
+    background-color: rgba(128, 128, 128, 0.418);
+    padding: 0 10px;
+}
+.cont a:hover{
+    text-decoration: underline;
+    color: rgb(107, 107, 107);
+}
+.show{
+    position:fixed;
+    height: 100vh;
+    width:100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+.detail{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.25);
+    width:50vw;
+    height: 50vh;
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity:0;
+    transition: all 0.5s 0.2s;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;  
+}
+.close,
+.close:link,
+.close:visited{
+    color: #ccc;
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 1.5rem;
+    display: inline-block;
+    line-height: 1;
+    transition: all 0.2s;
+}
+.close:hover{
+    color:black;
+    border: none;
+}
+
+.show:target{
+    opacity: 1;
+    visibility: visible;
+}
+.show:target .detail{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
